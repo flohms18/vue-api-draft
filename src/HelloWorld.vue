@@ -7,12 +7,6 @@ import { ref } from 'vue';
 const test = 'jackdaw'
 
 
-
-
-
-
-
-
 </script>
 
 <template>
