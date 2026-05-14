@@ -1,20 +1,22 @@
 <script setup>
 import axios from 'axios';
 import { onMounted } from 'vue';
+import { ref } from 'vue';
 
-onMounted(() => {
-    axios
-    .get('https://restcountries.com/v3.1/all?fields=name,capital,currencies'
-    .then(response => this.info = response)
-)
-})
+
+const test = 'jackdaw'
+
+
+
+
+
 
 
 
 </script>
 
 <template>
-    <h1>This is my hello world component</h1>
+    {{  test }}
 </template>
 
 <style scoped>
