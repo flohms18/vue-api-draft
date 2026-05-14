@@ -1,16 +1,19 @@
 <script setup>
 import axios from 'axios';
-import { onMounted } from 'vue';
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 
+const info = ref([])
 
-const test = 'jackdaw'
-
+onMounted(() => {
+    axios
+        .get('https://restcountries.com/v3.1/name/peru')
+        .then(response => { info.value = response.data })
+})
 
 </script>
 
 <template>
-    {{  test }}
+    {{  info }}
 </template>
 
 <style scoped>
