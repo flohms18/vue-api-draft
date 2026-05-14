@@ -3,15 +3,16 @@ import axios from 'axios';
 import { ref, onMounted } from 'vue';
 
 const info = ref([])
+const toto = ref([])
 
 const jackdaw = ref('James')
 
 onMounted(() => {
     axios
-        .get('https://restcountries.com/v3.1/all?fields=name,capital,currencies')
+        .get('https://restcountries.com/v3.1/all?fields=name')
         .then(response => { info.value = response.data })
-
-    jackdaw.value = 'Bond'
+        .then(() => console.log(info.value))
+        .then(() => toto.value = info.value)
 
     
 })
@@ -19,7 +20,7 @@ onMounted(() => {
 </script>
 
 <template>
-    {{  info }}
+    {{  toto }}
 
     {{ jackdaw }}
 </template>
