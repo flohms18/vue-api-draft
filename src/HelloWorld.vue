@@ -13,6 +13,7 @@ onMounted(() => {
         .then(response => { info.value = response.data })
         .then(() => console.log(info.value))
         .then(() => toto.value = info.value)
+        .catch(error => console.log(error))
 
     
 })
