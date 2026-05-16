@@ -50,118 +50,103 @@ function handleKeydown(e) {
 </script>
 
 <template>
-<section class="d-flex justify-content-center align-items-start py-4 px-3">
-    <div class="container">
+<section class="chat-page">
 
-        <!-- Row 1: Title -->
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-8 col-lg-6 text-center">
-                <h2 class="chat-title-text">Learn from Albus</h2>
-            </div>
-        </div>
-
-        <!-- Row 2: Intro -->
-        <div class="row justify-content-center mb-4">
-            <div class="col-12 col-md-8 col-lg-6 text-center intro-text">
-                {{ intro }}
-            </div>
-        </div>
-
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-10 col-lg-8">
-                <div class="chat-container">
-
-                    <div class="chat-window" ref="chatWindow">
-                        <div v-if="messages.length === 0" class="empty-state">
-                            Ask Albus anything about data & AI...
-                        </div>
-                        <div
-                            v-for="(msg, i) in messages"
-                            :key="i"
-                            class="message-row"
-                            :class="msg.role"
-                        >
-                            <div class="bubble">
-                                <span class="sender">{{ msg.role === 'user' ? 'You' : 'Albus' }}</span>
-                                <p>{{ msg.content }}</p>
-                            </div>
-                        </div>
-                        <div v-if="isLoading" class="message-row assistant">
-                            <div class="bubble typing">
-                                <span class="dot"></span>
-                                <span class="dot"></span>
-                                <span class="dot"></span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="input-bar">
-                        <textarea
-                            v-model="userInput"
-                            @keydown="handleKeydown"
-                            placeholder="Ask Albus..."
-                            rows="1"
-                            class="chat-input"
-                            :disabled="isLoading"
-                        ></textarea>
-                        <button
-                            @click="sendMessage"
-                            class="send-btn"
-                            :disabled="isLoading || !userInput.trim()"
-                        >
-                            &#9650;
-                        </button>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
+    <div class="chat-header">
+        <h2 class="chat-title-text">Learn from Albus</h2>
+        <p class="intro-text">{{ intro }}</p>
     </div>
+
+    <div class="chat-window" ref="chatWindow">
+        <div v-if="messages.length === 0" class="empty-state">
+            Ask Albus anything about data & AI...
+        </div>
+        <div
+            v-for="(msg, i) in messages"
+            :key="i"
+            class="message-row"
+            :class="msg.role"
+        >
+            <div class="bubble">
+                <span class="sender">{{ msg.role === 'user' ? 'You' : 'Albus' }}</span>
+                <p>{{ msg.content }}</p>
+            </div>
+        </div>
+        <div v-if="isLoading" class="message-row assistant">
+            <div class="bubble typing">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="input-bar">
+        <textarea
+            v-model="userInput"
+            @keydown="handleKeydown"
+            placeholder="Ask Albus..."
+            rows="1"
+            class="chat-input"
+            :disabled="isLoading"
+        ></textarea>
+        <button
+            @click="sendMessage"
+            class="send-btn"
+            :disabled="isLoading || !userInput.trim()"
+        >
+            &#9650;
+        </button>
+    </div>
+
 </section>
 </template>
 
 <style scoped>
+.chat-page {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #0c0116;
+}
+
+.chat-header {
+    padding: 1.5rem 2rem 1rem;
+    text-align: center;
+    flex-shrink: 0;
+}
+
 .chat-title-text {
     color: #f8f9fa;
     font-weight: 700;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
 }
 
 .intro-text {
     color: #9ca3af;
     font-size: 0.95rem;
     line-height: 1.6;
-}
-
-.chat-container {
-    background-color: #110520;
-    border: 1px solid #2a1a40;
-    border-radius: 16px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    height: 60vh;
-    min-height: 400px;
+    margin: 0;
 }
 
 /* Scrollable history */
 .chat-window {
     flex: 1;
     overflow-y: auto;
-    padding: 1.5rem 1.25rem;
+    padding: 1.5rem 2rem;
     display: flex;
     flex-direction: column;
     gap: 1rem;
     scrollbar-width: thin;
-    scrollbar-color: #2a1a40 transparent;
+    scrollbar-color: #5c6bff transparent;
 }
 
 .chat-window::-webkit-scrollbar {
     width: 6px;
 }
 .chat-window::-webkit-scrollbar-thumb {
-    background: #2a1a40;
+    background: #0c0116;
     border-radius: 4px;
 }
 
