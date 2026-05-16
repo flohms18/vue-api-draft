@@ -1,6 +1,16 @@
 <script setup>
 import axios from 'axios';
 import { ref, onMounted } from 'vue';
+import ollama from 'ollama'
+
+const response = await ollama.chat({
+    model: 'llama 3.1',
+     messages: [{ 
+        role: 'user', 
+        content: 'Why is the sky blue?' 
+    }],
+
+})
 
 const intro = ref('Albus is a web app that help you understand all concepts of data & AI. From Governance Framework to assimilate LLM technology, Engage the conversation with Albus!')
 
