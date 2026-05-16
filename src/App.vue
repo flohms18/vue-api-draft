@@ -14,4 +14,11 @@ import HelloWorld from './HelloWorld.vue';
   
 </template>
 
-<style scoped></style>
+<style scoped>
+
+° {
+  background-color: red;
+}
+
+
+</style>
