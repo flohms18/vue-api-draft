@@ -2,7 +2,7 @@
 
 import Header from './Header.vue';
 import Footer from './Footer.vue';
-import HelloWorld from './HelloWorld.vue';
+import HelloWorld from './ChatComponent.vue';
 </script>
 
 <template>
@@ -14,11 +14,34 @@ import HelloWorld from './HelloWorld.vue';
   
 </template>
 
-<style scoped>
-
-° {
-  background-color: red;
+<style>
+@font-face {
+  font-family: 'Space Grotesk';
+  src: url('./assets/fonts/SpaceGrotesk-Light.ttf') format('truetype');
+  font-weight: 300;
+}
+@font-face {
+  font-family: 'Space Grotesk';
+  src: url('./assets/fonts/SpaceGrotesk-Regular.ttf') format('truetype');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Space Grotesk';
+  src: url('./assets/fonts/SpaceGrotesk-Medium.ttf') format('truetype');
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'Space Grotesk';
+  src: url('./assets/fonts/SpaceGrotesk-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+}
+@font-face {
+  font-family: 'Space Grotesk';
+  src: url('./assets/fonts/SpaceGrotesk-Bold.ttf') format('truetype');
+  font-weight: 700;
 }
 
-
+* {
+  font-family: 'Space Grotesk', sans-serif;
+}
 </style>

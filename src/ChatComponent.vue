@@ -8,9 +8,11 @@ import { ref, onMounted } from 'vue';
 </script>
 
 <template>
-    {{  toto }}
 
-    {{ jackdaw }}
+    <div>
+        Hello this is my Chat Component
+    </div>
+   
 </template>
 
 <style scoped>
