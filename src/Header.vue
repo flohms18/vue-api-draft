@@ -13,18 +13,18 @@
 
 <style scoped>
 nav {
-  background-color: #0c0116;
+  background-color: var(--primary-color);
 }
 
 .brand {
-  color: #5c6bff;
+  color: var(--secondary-color);
   text-decoration: none;
   font-size: 1.8rem;
   padding-left: 1rem;
 }
 
 .brand:hover {
-  color: #5c6bff;
+  color: var(--secondary-color);
   text-decoration: none;
 }
 </style>

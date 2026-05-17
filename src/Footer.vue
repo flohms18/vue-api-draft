@@ -9,7 +9,7 @@
 
 <style scoped>
 .footer {
-  background-color: #0c0116;
+  background-color: var(--primary-color);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,7 +18,7 @@
 }
 
 .footer-text {
-  color: #f8f9fa;
+  color: var(--white-color);
   margin: 0;
   font-size: 0.9rem;
 }
