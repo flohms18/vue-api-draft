@@ -22,7 +22,7 @@ async function sendMessage() {
 
     try {
         const res = await ollama.chat({
-            model: 'llama3.1',
+            model: 'gemma3:270m',
             messages: messages.value.map(m => ({ role: m.role, content: m.content })),
         });
         messages.value.push({ role: 'assistant', content: res.message.content });
@@ -103,6 +103,14 @@ function handleKeydown(e) {
 </template>
 
 <style scoped>
+
+:root {
+    --primary-color : #0c0116;
+    --secondary-color : #5c6bff;
+    --white-color : #F8F9FA
+}
+
+
 .chat-page {
     position: fixed;
     inset: 0;
