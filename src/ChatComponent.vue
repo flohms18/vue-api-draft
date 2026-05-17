@@ -105,9 +105,9 @@ function handleKeydown(e) {
 <style scoped>
 
 :root {
-    --primary-color : #0c0116;
-    --secondary-color : #5c6bff;
-    --white-color : #F8F9FA
+    --dark-color : #0c0116;
+    --violet-color : #5c6bff;
+    --whitey-color : #F8F9FA
 }
 
 
@@ -116,7 +116,7 @@ function handleKeydown(e) {
     inset: 0;
     display: flex;
     flex-direction: column;
-    background-color: #0c0116;
+    background-color: var(--whitey-color);
 }
 
 .chat-header {
@@ -126,13 +126,13 @@ function handleKeydown(e) {
 }
 
 .chat-title-text {
-    color: #f8f9fa;
+    color: var(--dark-color);
     font-weight: 700;
     margin-bottom: 0.4rem;
 }
 
 .intro-text {
-    color: #9ca3af;
+    color: var(--dark-color);
     font-size: 0.95rem;
     line-height: 1.6;
     margin: 0;
@@ -147,19 +147,19 @@ function handleKeydown(e) {
     flex-direction: column;
     gap: 1rem;
     scrollbar-width: thin;
-    scrollbar-color: #5c6bff transparent;
+    scrollbar-color: var(--dark-color) transparent;
 }
 
 .chat-window::-webkit-scrollbar {
     width: 6px;
 }
 .chat-window::-webkit-scrollbar-thumb {
-    background: #0c0116;
+    background: var(--violet-color);
     border-radius: 4px;
 }
 
 .empty-state {
-    color: #4b3a6a;
+    color: var(--dark-color);
     text-align: center;
     margin: auto;
     font-size: 0.9rem;
@@ -187,16 +187,14 @@ function handleKeydown(e) {
 }
 
 .message-row.user .bubble {
-    background-color: #5c6bff;
-    color: #fff;
+    background-color: var(--dark-color);
+    color: var(--whitey-color);
     border-bottom-right-radius: 4px;
 }
 
 .message-row.assistant .bubble {
-    background-color: #1e0d35;
-    color: #e2d9f3;
-    border: 1px solid #2a1a40;
-    border-bottom-left-radius: 4px;
+    background-color: var(--violet-color);
+    color: var(--whitey-color);
 }
 
 .sender {
@@ -226,7 +224,7 @@ function handleKeydown(e) {
     width: 7px;
     height: 7px;
     border-radius: 50%;
-    background-color: #5c6bff;
+    background-color: var(--violet-color);
     animation: bounce 1.2s infinite;
 }
 
@@ -244,17 +242,15 @@ function handleKeydown(e) {
     align-items: flex-end;
     gap: 0.5rem;
     padding: 0.75rem 1rem;
-    border-top: 1px solid #2a1a40;
-    background-color: #0c0116;
+    background-color: var(--dark-color);
 }
 
 .chat-input {
     flex: 1;
     resize: none;
-    background: #1e0d35;
-    border: 1px solid #2a1a40;
+    background: var(--dark-color);
     border-radius: 10px;
-    color: #f8f9fa;
+    color: var(--whitey-color);
     font-family: inherit;
     font-size: 0.9rem;
     padding: 0.65rem 0.9rem;
@@ -266,11 +262,11 @@ function handleKeydown(e) {
 }
 
 .chat-input::placeholder {
-    color: #4b3a6a;
+    color: var(--dark-color);
 }
 
 .chat-input:focus {
-    border-color: #5c6bff;
+    border-color: var(--dark-color);
 }
 
 .chat-input:disabled {
@@ -278,10 +274,10 @@ function handleKeydown(e) {
 }
 
 .send-btn {
-    background-color: #5c6bff;
+    background-color: var(--violet-color);
     border: none;
     border-radius: 10px;
-    color: #fff;
+    color: var(--whitey-color);
     cursor: pointer;
     font-size: 0.85rem;
     padding: 0.65rem 0.85rem;
