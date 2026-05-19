@@ -21,9 +21,16 @@ async function sendMessage() {
     scrollToBottom();
 
     try {
+        const systemMessage = {
+            role: 'system',
+            content: `You are Albus. You ONLY answer questions about Data and AI.
+Allowed topics: machine learning, deep learning, LLMs, data engineering, statistics, Python, SQL, analytics, BI, MLOps, AI frameworks.
+If the question is NOT about Data or AI, say exactly: "I only answer questions about Data & AI."
+Reply in the same language as the user.`
+        };
         const res = await ollama.chat({
-            model: 'gemma3:270m',
-            messages: messages.value.map(m => ({ role: m.role, content: m.content })),
+            model: 'albus',
+            messages: [systemMessage, ...messages.value.map(m => ({ role: m.role, content: m.content }))],
         });
         messages.value.push({ role: 'assistant', content: res.message.content });
     } catch {
@@ -220,7 +227,7 @@ function handleKeydown(e) {
     width: 7px;
     height: 7px;
     border-radius: 50%;
-    background-color: var(--violet-color);
+    background-color: var(--whitey-color);
     animation: bounce 1.2s infinite;
 }
 
@@ -258,7 +265,7 @@ function handleKeydown(e) {
 }
 
 .chat-input::placeholder {
-    color: var(--dark-color);
+    color: rgba(255, 255, 255, 0.35);
 }
 
 .chat-input:focus {
