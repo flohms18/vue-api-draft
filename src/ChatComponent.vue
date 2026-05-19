@@ -21,16 +21,9 @@ async function sendMessage() {
     scrollToBottom();
 
     try {
-        const systemMessage = {
-            role: 'system',
-            content: `You are Albus. You ONLY answer questions about Data and AI.
-Allowed topics: machine learning, deep learning, LLMs, data engineering, statistics, Python, SQL, analytics, BI, MLOps, AI frameworks.
-If the question is NOT about Data or AI, say exactly: "I only answer questions about Data & AI."
-Reply in the same language as the user.`
-        };
         const res = await ollama.chat({
             model: 'albus',
-            messages: [systemMessage, ...messages.value.map(m => ({ role: m.role, content: m.content }))],
+            messages: messages.value.map(m => ({ role: m.role, content: m.content })),
         });
         messages.value.push({ role: 'assistant', content: res.message.content });
     } catch {
