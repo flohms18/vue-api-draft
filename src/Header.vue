@@ -12,19 +12,27 @@
 </template>
 
 <style scoped>
+
+:root {
+    --dark-color : #0c0116;
+    --violet-color : #5c6bff;
+    --whitey-color : #F8F9FA
+}
+
+
 nav {
-  background-color: var(--primary-color);
+  background-color: var(--dark-color);
 }
 
 .brand {
-  color: var(--secondary-color);
+  color: var(--dark-color);
   text-decoration: none;
   font-size: 1.8rem;
   padding-left: 1rem;
 }
 
 .brand:hover {
-  color: var(--secondary-color);
+  color: var(--dark-color);
   text-decoration: none;
 }
 </style>

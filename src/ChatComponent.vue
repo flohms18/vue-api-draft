@@ -104,13 +104,6 @@ function handleKeydown(e) {
 
 <style scoped>
 
-:root {
-    --dark-color : #0c0116;
-    --violet-color : #5c6bff;
-    --whitey-color : #F8F9FA
-}
-
-
 .chat-page {
     position: fixed;
     inset: 0;
@@ -179,11 +172,14 @@ function handleKeydown(e) {
 }
 
 .bubble {
-    max-width: 75%;
+    max-width: min(75%, 720px);
+    width: fit-content;
     padding: 0.75rem 1rem;
     border-radius: 14px;
     font-size: 0.9rem;
     line-height: 1.6;
+    word-break: break-word;
+    overflow-wrap: break-word;
 }
 
 .message-row.user .bubble {
@@ -293,5 +289,36 @@ function handleKeydown(e) {
 .send-btn:disabled {
     opacity: 0.35;
     cursor: not-allowed;
+}
+
+@media (max-width: 640px) {
+    .chat-header {
+        padding: 1rem 1rem 0.5rem;
+    }
+
+    .intro-text {
+        font-size: 0.85rem;
+    }
+
+    .chat-window {
+        padding: 1rem;
+        gap: 0.75rem;
+    }
+
+    .bubble {
+        max-width: 90%;
+        font-size: 0.85rem;
+        padding: 0.65rem 0.85rem;
+    }
+
+    .input-bar {
+        padding: 0.5rem 0.75rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .bubble {
+        max-width: 95%;
+    }
 }
 </style>

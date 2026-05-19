@@ -15,6 +15,12 @@ import HelloWorld from './ChatComponent.vue';
 </template>
 
 <style>
+:root {
+  --dark-color: #0c0116;
+  --violet-color: #5c6bff;
+  --whitey-color: #F8F9FA;
+}
+
 @font-face {
   font-family: 'Space Grotesk';
   src: url('./assets/fonts/SpaceGrotesk-Light.ttf') format('truetype');
